@@ -5,18 +5,18 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-theme                    : "minimal-mistakes-jekyll"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+theme                    : "minimal-ionio-jekyll"
+minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "cloud"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Minimal Mistakes Development Test Site"
+locale                   : "gr"
+title                    : "Τμήμα Πληροφορικής"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "Minimal Mistakes theme test."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/test"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+name                     : ""
+description              : ""
+url                      : "https://ioniodi.github.io"
+baseurl                  : "/minimal-ionio"
+repository               : "ioniodi/minimal-ionio"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -33,12 +33,12 @@ comments:
     colorscheme          : # "light" (default), "dark"
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : # "master", "gh-pages"
+  branch                 : "master"
   commitMessage          : "New comment."
   filename               : comment-{@timestamp}
   format                 : "yml"
   moderation             : true
-  path                   : "_data/comments/{options.slug}"
+  path                   : "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
   requiredFields         : ['name', 'email', 'message']
   transforms:
     email                : "md5"
@@ -49,28 +49,23 @@ staticman:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   path                   : # blank (default) uses feed.xml
+
 search                   : true # true, false (default)
-search_full_content      : true # true, false (default)
-search_provider          : "algolia"
-algolia:
-  application_id         : "QB6HVGBSBA"
-  index_name             : "dev_minimal-mistakes"
-  search_only_api_key    : "9d5014e5bbc77372547bce778dfa5663"
-  powered_by             : true
 
 # SEO Related
 google_site_verification :
 bing_site_verification   :
+alexa_site_verification  :
 yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : "mmistakes"
+  username               :
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/bio-photo.jpg"
+og_image                 : # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -87,20 +82,19 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
-  uri              :
-  home             : # null (default), "absolute or relative url to link to author home"
+  name             : # "Department of Informatics"
+  avatar           : "/assets/images/logo.png"
+  bio              : # "Ionian University"
+  location         : # "Corfu, Greece"
+  email            : "contact@di.ionio.gr"
+  uri              : "http://di.ionio.gr"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "ioniodi"
   google_plus      :
   keybase          :
   instagram        :
@@ -111,7 +105,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
-  twitter          : "mmistakes"
+  twitter          :
   vine             :
   weibo            :
   xing             :
@@ -146,16 +140,14 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Liquid
-strict_front_matter: true
-liquid:
-  error_mode: strict
 
 # Conversion
 markdown: kramdown
@@ -190,7 +182,7 @@ paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
-# Plugins (previously gems:)
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -221,8 +213,8 @@ category_archive:
   type: liquid
   path: /categories/
 tag_archive:
-  type: liquid
-  path: /tags/
+  type: google
+  path: https://scholar.google.gr/scholar?hl=en&as_sdt=0%2C5&q
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -243,60 +235,114 @@ compress_html:
   ignore:
     envs: development
 
-
 # Collections
 collections:
-  recipes:
+  people:
     output: true
-    permalink: /:collection/:path/
-  pets:
+    permalink: /people/:path/
+  courses:
     output: true
-    permalink: /:collection/:path/
-  portfolio:
+    permalink: /courses/:path/
+  msc:
     output: true
-    permalink: /:collection/:path/
-
+    permalink: /msc/:path/
+  groups:
+    output: true
+    permalink: /groups/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+  pages:
+    output: true
+    permalink: /:path/
+  posts:
+    output: true
+    permalink: /posts/:year/:month/:day/:title/
 
 # Defaults
 defaults:
-  # _posts
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      sidebar: false
+      layout: single
+      author_profile: false
+      read_time: false
+      comments: # true
+      share: false
+      related: false
+      search: false
+  # _people
+  - scope:
+      path: ""
+      type: people
+    values:
+      sidebar: false
+      layout: people
+      author_profile: true
+      read_time: false
+      comments: # true
+      share: false
+      related: false
+  # _courses
+  - scope:
+      path: ""
+      type: courses
+    values:
+      sidebar: false
+      layout: courses
+      author_profile: true
+      read_time: false
+      comments: # true
+      share: false
+      related: false
+  # _msc
+  - scope:
+      path: ""
+      type: msc
+    values:
+      sidebar: false
+      layout: courses
+      author_profile: true
+      read_time: false
+      comments: # true
+      share: false
+      related: false
+  # _groups
+  - scope:
+      path: ""
+      type: groups
+    values:
+      sidebar: false
+      layout: single
+      author_profile: false
+      read_time: false
+      comments: # true
+      share: false
+      related: false
+   # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      sidebar: false
+      layout: single
+      author_profile: false
+      read_time: false
+      comments: # true
+      share: false
+      related: false
+ # _posts
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _recipes
-  - scope:
-      path: ""
-      type: recipes
-    values:
-      layout: single
-      author_profile: true
-      share: true
-  # _pets
-  - scope:
-      path: ""
-      type: pets
-    values:
-      layout: single
-      author_profile: true
-      share: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
+      sidebar: false
       layout: single
       author_profile: false
+      read_time: false
+      comments: # true
       share: true
+      related: true
