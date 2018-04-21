@@ -1,7 +1,5 @@
 <div class="page__footer-follow">
- 
   <ul class="social-icons">
-    <!--  
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
     {% endif %}
@@ -20,24 +18,8 @@
     {% if site.author.bitbucket %}
       <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
     {% endif %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | absolute_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    -->
-    {% if site.author.e-class %}
-      <li><a href="https://e-class.ionio.gr"> E-class </a></li>
-    {% endif %}
-    {% if site.author.webmail %}
-      <li><a href="https://webmail.ionio.gr/"> Webmail </a></li>
-    {% endif %}
-    {% if site.author.gramweb %}
-      <li><a href="http://gram-web.ionio.gr/unistudent/login.asp"> Gramweb </a></li>
-    {% endif %}
-    {% if site.author.dreamspark %}
-      <li><a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=1e1f8b5d-849b-e011-969d-0030487d8897&vsro=8&JSEnabled=1"> Dreamspark </a></li>
-    {% endif %}
-    {% if site.author.eudoxus %}
-      <li><a href="https://service.eudoxus.gr/"> Eudoxus </a></li>
-    {% endif %}
-</ul>
-
+    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+  </ul>
+</div>
 
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
