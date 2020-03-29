@@ -15,7 +15,7 @@ layout: single
         {% for hash in interest_hashes %}
             {% assign keyValue = hash | split: '#' %}
             {% capture interest %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
-            <a href="{{ interest | url_encode | prepend: 'https://google.gr/scholar?hl=en&as_sdt=0%2C5&q=' }}" class="page__taxonomy-item" rel="tag">{{ interest }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+            <a href="{{ interest | url_encode | prepend: 'https://www.google.gr/search?q=' }}" class="page__taxonomy-item" rel="tag">{{ interest }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
         {% endfor %}
         </span>
     </p>  
