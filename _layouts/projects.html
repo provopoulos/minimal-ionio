@@ -20,12 +20,3 @@ layout: single
         </span>
     </p>  
 {% endif %}
-
-<h2>{{ p }}</h2>
-{% if page.partners %}
-    <span itemprop="keywords">
-        {% for partner in page.partners %}
-            <div class="page__taxonomy-item" rel="tag">{{ partner }}</div>
-        {% endfor %}
-    </span>
-{% endif %}
