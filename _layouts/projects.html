@@ -4,9 +4,7 @@ layout: single
 {{ content }}
 
 {% assign p = 'Partners' %}
-
 <h2>{{ p }}</h2>
-
 {% if page.partners %}
     {% capture page_interests %}{% for interest in page.partners %}{{ interest | downcase }}#{{ interest }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
     {% assign interest_hashes = (page_interests | split: ',' | sort:0) %}
@@ -21,11 +19,15 @@ layout: single
 {% endif %}
 
 <h2>{{ p }}</h2>
-
-<span itemprop="keywords">
-    {% if page.partners %}
+{% if page.partners %}
+    <span itemprop="keywords">
         {% for partner in page.partners %}
-            <a href="" class="page__taxonomy-item" rel="tag">{{ partner.title }}</a>
+            <a href="" class="page__taxonomy-item" rel="tag">{{ partner }}</a>
         {% endfor %}
-    {% endif %}
-</span>
+    </span>
+{% endif %}
+
+
+{% if page.web %}
+    <a href="{{ page.web }}">Μάθετε περισσότερα</a>
+{% endif %}
