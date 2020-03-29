@@ -23,9 +23,9 @@ layout: single
 <h2>{{ p }}</h2>
 
 <span itemprop="keywords">
-    {% for project in site.projects %}
-        {% for partner in project.partners %}
+    {% if page.partners %}
+        {% for partner in page.partners %}
             <a href="" class="page__taxonomy-item" rel="tag">{{ partner }}</a>
         {% endfor %}
-    {% endfor %}
+    {% endif %}
 </span>
