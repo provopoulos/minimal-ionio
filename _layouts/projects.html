@@ -25,7 +25,7 @@ layout: single
 <span itemprop="keywords">
     {% if page.partners %}
         {% for partner in page.partners %}
-            <a href="" class="page__taxonomy-item" rel="tag">{{ partner }}</a>
+            <a href="" class="page__taxonomy-item" rel="tag">{{ partner.title }}</a>
         {% endfor %}
     {% endif %}
 </span>
