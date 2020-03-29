@@ -20,10 +20,12 @@ layout: single
     </p>  
 {% endif %}
 
+<h2>{{ p }}</h2>
+
 <span itemprop="keywords">
     {% for project in site.projects %}
         {% for partner in project.partners %}
-            <a href="{{ partner.url | absolute_url }}" class="page__taxonomy-item" rel="tag">{{ partner }}</a>
+            <a href="" class="page__taxonomy-item" rel="tag">{{ partner }}</a>
         {% endfor %}
     {% endfor %}
 </span>
