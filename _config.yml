@@ -126,6 +126,37 @@ author:
   dreamspark       : "https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=1e1f8b5d-849b-e011-969d-0030487d8897&vsro=8&JSEnabled=1"
   eudoxus          : "https://service.eudoxus.gr/"
 
+footer_links:
+  categories:
+    - name: Προσωπικό
+      url: /people/
+      base_url: /people/
+      links:
+        - name: Βασίλειος Χρυσικόπουλος
+          url: "vchris/"
+        - name: Παναγιώτης Βλάμος
+          url: "vlamos/"
+    - name: Μαθήματα Προπτυχιακό (π)
+      url: /courses/#προπτυχιακο
+      base_url: /courses/
+      links:
+        - name: Α' Εξάμηνο (Π)
+          url: "#a-εξαμηνο"
+        - name: Β' Εξάμηνο (Π)
+          url: "#β-εξαμηνο"
+        - name: Γ' Εξάμηνο (Π)
+          url: "#γ-εξαμηνο"
+        - name: Δ' Εξάμηνο (Π)
+          url: "#δ-εξαμηνο"
+        - name: Ε' Εξάμηνο (Π)
+          url: "#ε-εξαμηνο"
+        - name: ΣΤ' Εξάμηνο (Π)
+          url: "#στ-εξαμηνο"
+        - name: Ζ' Εξάμηνο (Π)
+          url: "#ζ-εξαμηνο"
+        - name: Η' Εξάμηνο (Π)
+          url: "#η-εξαμηνο"
+
 # Reading Files
 include:
   - .htaccess

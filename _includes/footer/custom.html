@@ -1,5 +1,19 @@
 <!-- start custom footer snippets -->
 <div class="page__footer-follow">
+  <table style="width:100%; align:center">
+    <tr>
+    {%  for category in site.footer_links.categories %}
+      <td>
+        <table style="align:top">
+          <th> <a href={{ category.url }}> {{ category.name }} </a> </th>
+          {% for reference in category.links %}
+            <tr> <td> <a href={{category.base_url }}{{ reference.url }}> {{ reference.name }} </a> </td> </tr>
+          {% endfor %}
+        </table>
+      </td>
+    {% endfor %}
+    </tr>
+  </table>
   <ul class="social-icons">
     {% if site.author.e-class %}
       <li><a href="https://e-class.ionio.gr"> E-class </a></li>
@@ -18,4 +32,6 @@
     {% endif %}
   </ul>
 </div>
+
+
 <!-- end custom footer snippets -->
