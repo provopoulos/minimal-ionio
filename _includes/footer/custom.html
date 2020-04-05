@@ -1,15 +1,19 @@
 <!-- start custom footer snippets -->
 <div class="page__footer-follow">
-  <table style="width:100%; align:center">
+  <table style="border: 1px solid transparent">
     <tr>
-    {%  for category in site.footer_links.categories %}
-      <td>
-        <table style="align:top">
-          <th> <a href={{ category.url }}> {{ category.name }} </a> </th>
+    {%  for category in site.data.shortcuts.categories %}
+      <td style="vertical-align: top;">
+        <ul class="social-icons">
+          <li > <a href={{ category.url }} > <b style="color: white; text-transform: none; font-size: 1.5em; font-weight: bold;"> {{ category.name }} </b> </a> </li>  <br>
           {% for reference in category.links %}
-            <tr> <td> <a href={{category.base_url }}{{ reference.url }}> {{ reference.name }} </a> </td> </tr>
+            {% if reference.external == true %}
+              <li class=""> <a href="{{ reference.url | absolute_url }}" rel="permalink" style="color: white; text-transform: none; font-size: 1.5em; font-weight: normal;" target="_blank"> {{ reference.name }} </a> </li>  <br>
+            {% else %}
+              <li class=""> <a href={{category.base_url }}{{ reference.url }} style="color: white; text-transform: none; font-size: 1.5em; font-weight: normal;"> {{ reference.name }} </a> </li>  <br>
+            {% endif %}
           {% endfor %}
-        </table>
+        </ul>
       </td>
     {% endfor %}
     </tr>
