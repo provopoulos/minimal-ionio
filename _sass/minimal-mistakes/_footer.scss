@@ -50,6 +50,18 @@
   .fal {
     color: $muted-text-color;
   }
+  td {
+    border: none;
+  }
+  td:hover{
+    background-color: $footer-background-color;
+  }
+  ul:hover{
+    background-color: $footer-background-color;
+  }
+  tr:hover{
+    background-color: $footer-background-color;
+  }
 }
 
 .page__footer-copyright {

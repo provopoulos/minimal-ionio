@@ -2,6 +2,8 @@
 {% assign pages = posts.docs | sort: "title" %}
 {% for post in pages %}
   {% if post.semester == include.i or post.rank == include.i %}
-    {% include archive-single.html %}
+    {% if post.type == include.c_type %}
+      {% include archive-single.html %}
+    {% endif %}
   {% endif %}
 {% endfor %}
