@@ -126,7 +126,6 @@ author:
   dreamspark       : "https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=1e1f8b5d-849b-e011-969d-0030487d8897&vsro=8&JSEnabled=1"
   eudoxus          : "https://service.eudoxus.gr/"
 
-
 # Reading Files
 include:
   - .htaccess
