@@ -1,22 +1,21 @@
 <!-- start custom footer snippets -->
 <div class="page__footer-follow">
-  <table style="border: 1px solid transparent;">
-      <tr onmouseover="this.style.background = '#0000';">
-          {%  for category in site.data.shortcuts.categories %}
-              <td style="vertical-align: top; border: none; " >
-                  <ul class="social-icons" style="">
-                      <li > <a href={{ category.url }} > <b style="color: white; text-transform: none; font-size: 1.5em; font-weight: bold;"> {{ category.name }} </b> </a> </li>  <br>
-                      {% for reference in category.links %}
-                          {% if reference.external == true %}
-                              <li class=""> <a href="{{ reference.url | absolute_url }}" rel="permalink" style="color: white; text-transform: none; font-size: 1.5em; font-weight: normal;" target="_blank"> {{ reference.name }} </a> </li>  <br>
-                          {% else %}
-                              <li class=""> <a href={{category.base_url }}{{ reference.url }} style="color: white; text-transform: none; font-size: 1.5em; font-weight: normal;"> {{ reference.name }} </a> </li>  <br>
-                          {% endif %}
-                      {% endfor %}
-                  </ul>
-              </td>
-          {% endfor %}
-      </tr>
-  </table>
+  <ul class="social-icons">
+    {% if site.author.e-class %}
+      <li><a href="https://e-class.ionio.gr"> E-class </a></li>
+    {% endif %}
+    {% if site.author.webmail %}
+      <li><a href="https://webmail.ionio.gr/"> Webmail </a></li>
+    {% endif %}
+    {% if site.author.gramweb %}
+      <li><a href="http://gram-web.ionio.gr/unistudent/login.asp"> Gramweb </a></li>
+    {% endif %}
+    {% if site.author.dreamspark %}
+      <li><a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=1e1f8b5d-849b-e011-969d-0030487d8897&vsro=8&JSEnabled=1"> Dreamspark </a></li>
+    {% endif %}
+    {% if site.author.eudoxus %}
+      <li><a href="https://service.eudoxus.gr/"> Eudoxus </a></li>
+    {% endif %}
+  </ul>
 </div>
 <!-- end custom footer snippets -->
