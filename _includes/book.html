@@ -3,7 +3,7 @@
 <ul>
 {% for book in page.books %}
     <li>
-        <a href="{% details_link book %}">{% reference book %}</a>
+        <a href="{% details_link book %}" rel="permalink">{% reference book %}</a>
     </li>
 {% endfor %}
 </ul>
