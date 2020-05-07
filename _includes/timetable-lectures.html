@@ -1,0 +1,40 @@
+
+<div class="" style="margin-top: 2em;">
+<table style="width:100%; text-align: center;">
+    <tr>
+    <th></th>
+    {% for day in page.days %}
+        <th> {{ day }} </th> 
+    {% endfor %}
+    </tr>
+    {% for time in (9..20) %}
+        <tr>
+            <td> {{time}}:00-{{ time | plus: 1 }}:00</td>
+            {% for day in page.days %}
+                {% assign s = time | downcase %}
+                {% assign lectures = site.data.timetable.under_sem_b | where: 'day', day%}
+                {% assign has_lecture = false %}
+                {% for lect in lectures%}
+                    {% if lect.time == time %}
+                        <td rowspan="2"> <b> {{ lect.title }} </b> <br> <i> {{ lect.person }} </i> <br> {{lect.location}} </td>
+                        {% assign has_lecture = true %}
+                    {% endif %}
+                {% endfor %}
+                {% assign ptime = time | plus: -1 %}
+                {% assign previous_lect = false %}
+                {% for lecture in lectures %}
+                    {% if lecture.time == ptime %}
+                        {% assign previous_lect = true %}
+                    {% endif %}
+                {% endfor %}
+                {% if previous_lect %}
+                {% else %}
+                    {% if has_lecture == false %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</div>
