@@ -1,0 +1,14 @@
+<h1>Tag Cloud</h1>
+{% assign tags =  site.posts | map: 'tags' | join: ',' | split: ',' | uniq %}
+{% for tag in tags %}
+    {% assign tag_freq = site.posts | where_exp: 'post', 'post.tags contains tag' | size %}
+    <p class="page__taxonomy page__meta" style="margin: 0px">
+        <span itemprop="keywords">
+        <a href="/tags/{{ tag | slugify }}/"
+            style="font-size: {{ tag_freq  |  times: 4 | plus: 80  }}%; margin: 0px"
+            class="page__taxonomy-item" rel="tag">
+                {{ tag | replace:'-', ' ' }} ({{ tag_freq }})
+          </a>
+        </span>
+    </p>
+{% endfor %}
