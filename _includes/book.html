@@ -1,17 +1,9 @@
 <h2> Βιβλιογραφία: </h2>
 
-    {% for book in page.books %}
-
-        {% assign book_in_db = site.data.books[book] %}
-        <ul>
-            </li> 
-                <a href= "{{ book_in_db.url }}" >
-                    <p>
-                        {{ book_in_db.name }} , {{book_in_db.authors}} , 
-                        Εκδόσεις {{book_in_db.publisher}} , {{book_in_db.version}} / {{book_in_db.year}} ,
-                        ISBN : {{book_in_db.ISBN}} 
-                    </p>
-                </a>
-            </li>
-        </ul>
-    {% endfor %}
+<ul>
+{% for book in page.books %}
+    <li>
+        <a href="{% details_link book %}" rel="permalink">{% reference book %}</a>
+    </li>
+{% endfor %}
+</ul>

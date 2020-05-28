@@ -1,0 +1,32 @@
+{% assign author = page.entry.author | default: page.authors[0] %}
+{% assign avatar = page.entry.cover %}
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    <img src="{{ avatar }}" style="border-radius: 0%; max-width: 200px;" alt="{{ author }}" itemprop="image">
+  </div>
+
+  <div class="author__content">
+    {% assign authors = author | split: ", " %}
+    {% for author_i in authors %}
+      <h3 class="author__name" itemprop="name">{{ author_i }}</h3>
+    {% endfor %}
+    <p class="author__bio" itemprop="description">
+      {{ author.bio }}
+    </p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button
+      class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Authors" }}</button>
+    <ul class="author__urls social-icons">
+      <li>
+        <a href="https://service.eudoxus.gr/search/#a/id:{{ page.entry.eudoxusid }}/0" itemprop="url">
+          <i class="fas fa-fw fa-link" aria-hidden="true"></i>
+          {{ site.data.ui-text[site.locale].eudoxus_label | default: "Εύδοξος" }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
