@@ -1,0 +1,6 @@
+{% assign posts = site.courses %}
+{% for post in posts %}
+  {% if post.type == "I" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
