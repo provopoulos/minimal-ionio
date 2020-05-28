@@ -1,5 +1,6 @@
-{% capture video_src %}{{ page.header.video.source }}{% endcapture %}
-{% capture video_list %}{{ page.header.video.playlist }}{% endcapture %}
+{% assign video_src = { page.header.video.source } %}
+{% assign video_list = { page.header.video.playlist } %}
+
 
 
 <div class="backgroundvid"
