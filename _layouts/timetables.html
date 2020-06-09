@@ -1,0 +1,72 @@
+---
+layout: single
+days: 
+  - "Δευτέρα"
+  - "Τρίτη"
+  - "Τετάρτη"
+  - "Πέμπτη"
+  - "Παρασκευή"
+---
+
+{% capture days %}Δευτέρα;Τρίτη;Τετάρτη;Πέμπτη;Παρασκευή{% endcapture %}
+{% assign days = days | split: ';'%}
+
+<div class="" style="margin-top: 2em;">
+<table style="width:100%; text-align: center;">
+    <tr>
+    <th></th>
+    {% for day in days %}
+        {% if day %}
+            <th> {{ day }} </th> 
+        {% endif %}
+    {% endfor %}
+    </tr>
+    {% for time in (9..20) %}
+        <tr>
+            <td> {{time}}:00-{{ time | plus: 1 }}:00</td>
+            {% for day in days %}
+                {% if day %}
+                    {% assign s = time | downcase %}
+                    {% assign lectures = page.timetable | where: "day", day%}
+                    {% assign has_lecture = false %}
+                    {% for lect in lectures%}
+                        {% if lect.time == time %}
+                            {% assign course = site.courses | where: "ref", lect.course | first %}
+                            <td rowspan="2"> <b> 
+                                {% if course %}
+                                    <a href="{{ course.url | absolute_url }}">{{ course.title }}</a>
+                                {% else %}
+                                    {{lect.course}}
+                                {% endif %}
+                                </b> <br> <i> 
+                                    {% assign author = site.people | where: "ref", lect.author | first %}
+                                    {% if author %}
+                                        <a href="{{ author.url | absolute_url }}">{{ author.title }}</a>
+                                    {% else %}
+                                        {{lect.author}}
+                                    {% endif %}
+                            </i> <br> {{lect.location}} </td>
+                            {% assign has_lecture = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% assign ptime = time | plus: -1 %}
+                    {% assign previous_lect = false %}
+                    {% for lecture in lectures %}
+                        {% if lecture.time == ptime %}
+                            {% assign previous_lect = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if previous_lect == true %}
+                    {% else %}
+                        {% if has_lecture == false %}
+                            <td></td>
+                        {% else %}
+                            <!-- <td></td> -->
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</div>

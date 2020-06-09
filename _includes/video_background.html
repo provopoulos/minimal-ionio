@@ -1,0 +1,35 @@
+{% assign video_src = page.header.video.source  %}
+{% assign video_list =  page.header.video.playlist  %}
+
+
+
+<div class="backgroundvid"
+  <div class="page_hero">
+    <div id="overlay"></div> 
+      <div class="wrapper" style="color: white;">
+        
+          <h1 class="page__title" itemprop="headline" style="bottom:0;">
+            {% if paginator and site.paginate_show_page_num %}
+              {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
+            {% else %}
+              {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+            {% endif %}
+          </h1>
+          {% if page.header.show_overlay_excerpt != false and page.excerpt %}
+            <p class="page__lead">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+          {% endif %}
+          {% if site.read_time and page.read_time %}
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+          {% endif %}
+          {% if page.header.cta_url %}
+            <p><a href="{{ cta_path }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+          {% endif %}
+
+      
+        
+        <iframe src="https://www.youtube.com/embed/{{video_src}}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{video_list}}" allow='autoplay' frameborder="0" allowfullscreen></iframe>
+        
+      </div>
+    
+  </div> 
+</div>
