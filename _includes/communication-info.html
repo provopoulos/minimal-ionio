@@ -2,25 +2,25 @@
 {% assign cnt_info = site.data.contact["contact_info"] %}
 {% assign map = site.data.contact["leaflet_map_1"] %}
 
-<h3><i class= "fa fa-map-marker-alt" style="color: orange; font-size: x-large;" aria-hidden="true"></i> Διεύθυνση </h3>
-<h5>{{addr.building}}<br>{{addr.street}}<br>{{addr.zip}}</h5>
+<h2><i class= "fa fa-map-marker-alt" style="color: orange; font-size: x-large;" aria-hidden="true"></i> Διεύθυνση </h2>
+<h4>{{addr.building}}<br>{{addr.street}}<br>{{addr.zip}}</h4>
 
-<h3> <i class="fa fa-phone" style="color: orange; font-size: x-large;"></i> Τηλέφωνα Επικοινωνίας </h3>
+<h2> <i class="fa fa-phone" style="color: orange; font-size: x-large;"></i> Τηλέφωνα Επικοινωνίας </h2>
 {%- for num in cnt_info.tel -%}
-	<h5><a href="tel:+30{{num}}">{{num}}</a></h5>
+	<h4><a href="tel:+30{{num}}">{{num}}</a></h4>
 {%- endfor -%}
 
-<h3><i class="fa fa-fax" style="color: orange; font-size: x-large;"></i> Fax </h3>
+<h2><i class="fa fa-fax" style="color: orange; font-size: x-large;"></i> Fax </h2>
 {%- for fnum in cnt_info.fax -%}
-	<h5>{{fnum}}</h5>
+	<h4>{{fnum}}</h4>
 {%- endfor -%}
 
-<h3><i class="far fa-envelope" style="color: orange; font-size: x-large;"></i> Διεύθυνση Ηλεκτρονικού Ταχυδρομείου </h3>
+<h2><i class="far fa-envelope" style="color: orange; font-size: x-large;"></i> Διεύθυνση Ηλεκτρονικού Ταχυδρομείου </h2>
 {%- for em in cnt_info.email -%}
-	<h5><a href="mailto:{{em}}">{{em}}</a></h5>
+	<h4><a href="mailto:{{em}}">{{em}}</a></h4>
 {%- endfor -%}
 
-<h3><i class="far fa-map" style="color: orange; font-size: x-large;"></i> Ο Χάρτης της Πόλης </h3>
+<h2><i class="far fa-map" style="color: orange; font-size: x-large;"></i> Ο Χάρτης της Πόλης </h2>
 {% leaflet_map
 				{
 					"center": {{map.center}},
@@ -41,5 +41,5 @@
 
 <h3>Περιήγηση με τους προσωπικούς χάρτες</h3>
 {%- for marker in map.leaflet_markers -%}
-	<h5><a href="https://maps.google.com/maps/place/{{marker.latitude}},{{marker.longitude}}"> {{marker.popupContent}} </a></h5>
+	<h4><a href="https://maps.google.com/maps/place/{{marker.latitude}},{{marker.longitude}}"> {{marker.popupContent}} </a></h4>
 {%- endfor -%}
