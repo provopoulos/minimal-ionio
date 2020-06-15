@@ -1,6 +1,6 @@
 {% assign addr = site.data.contact["address"] %}
 {% assign cnt_info = site.data.contact["contact_info"] %}
-{% assign map = site.data.contact["leaflet_map_1"] %}
+{% assign map = site.data.contact["map_1"] %}
 
 <h2><i class= "fa fa-map-marker-alt" style="color: orange; font-size: x-large;" aria-hidden="true"></i> Διεύθυνση </h2>
 <h5>{{addr.building}}<br>{{addr.street}}<br>{{addr.zip}}</h5>
@@ -8,11 +8,6 @@
 <h2> <i class="fa fa-phone" style="color: orange; font-size: x-large;"></i> Τηλέφωνα Επικοινωνίας </h2>
 {%- for num in cnt_info.tel -%}
 	<h5><a href="tel:+30{{num}}">{{num}}</a></h5>
-{%- endfor -%}
-
-<h2><i class="fa fa-fax" style="color: orange; font-size: x-large;"></i> Fax </h2>
-{%- for fnum in cnt_info.fax -%}
-	<h5>{{fnum}}</h5>
 {%- endfor -%}
 
 <h2><i class="far fa-envelope" style="color: orange; font-size: x-large;"></i> Διεύθυνση Ηλεκτρονικού Ταχυδρομείου </h2>
@@ -28,7 +23,7 @@
 					"providerBasemap": "{{map.providerBasemap}}", 
 				}
 %}
-	{%- for marker in map.leaflet_markers -%}
+	{%- for marker in map.markers -%}
 		{% leaflet_marker 
 							{
 								"latitude": {{marker.latitude}},
@@ -40,6 +35,6 @@
 {% endleaflet_map %}
 
 <h3>Περιήγηση με τους προσωπικούς χάρτες</h3>
-{%- for marker in map.leaflet_markers -%}
+{%- for marker in map.markers -%}
 	<h5><a href="https://maps.google.com/maps/place/{{marker.latitude}},{{marker.longitude}}"> {{marker.popupContent}} </a></h5>
 {%- endfor -%}
