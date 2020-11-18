@@ -1,6 +1,96 @@
+<div id="1st-rank" class="grid-container" ><h1 class="rank_title">1st rank</h1>
+</div>
+<div id="2nd-rank" class="grid-container" ><h1 class="rank_title">2nd rank</h1>
+</div>
+<div id="3rd-rank" class="grid-container" ><h1 class="rank_title">3rd rank</h1>
+</div>
+<div id="4th-rank" class="grid-container"  ><h1 class="rank_title">4th rank</h1>
+</div>
+<div id="5th-rank" class="grid-container"  ><h1 class="rank_title">5th rank</h1>
+</div>
+<div id="6th-rank" class="grid-container" ><h1 class="rank_title">6th rank</h1>
+</div>
+<div id="7th-rank" class="grid-container" ><h1 class="rank_title">7th rank</h1>
+</div>
+<div id="8th-rank" class="grid-container" ><h1 class="rank_title">8th rank</h1>
+</div>
+
+
+
 {% assign people = site.people | sort: "rank" %}
 {% for post in people %}
-  {% if post.rank %}
-    {% include archive-people.html %}
-  {% endif %}
-{% endfor %}  
+{% case post.rank %}
+  {% when 1 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("1st-rank").style.display = "grid";
+            document.getElementById('1st-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 2 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("2nd-rank").style.display = "grid";
+            document.getElementById('2nd-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 3 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("3rd-rank").style.display = "grid";
+            document.getElementById('3rd-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 4 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("4th-rank").style.display = "grid";
+            document.getElementById('4th-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 5 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("5th-rank").style.display = "grid";
+            document.getElementById('5th-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 6 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("6th-rank").style.display = "grid";
+            document.getElementById('6th-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 7 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("7th-rank").style.display = "grid";
+            document.getElementById('7th-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+  {% when 8 %}
+      
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("8th-rank").style.display = "grid";
+            document.getElementById('8th-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+      </script>
+{% endcase %}
+{% endfor %}
