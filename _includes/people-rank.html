@@ -22,7 +22,7 @@
 {% case post.rank %}
   {% when 1 %}
       
-      <div id="{{ post.ref }}" style="float: left;" class="test-for-div" >
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
         {% include archive-people.html %}
       <div>
       <script>
@@ -31,7 +31,7 @@
       </script>
   {% when 2 %}
       
-      <div id="{{ post.ref }}" style="float: left;" class="test-for-div" >
+      <div id="{{ post.ref }}" style="float: left;" class="grid__item" >
         {% include archive-people.html %}
       <div>
       <script>
