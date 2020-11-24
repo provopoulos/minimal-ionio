@@ -1,0 +1,14 @@
+{% if post.author and site.data.authors[post.author] %}
+  {% assign author = site.data.authors[post.author] %}
+{% else %}
+  {% assign author = site.author %}
+{% endif %}
+
+
+<div id="{{ post.ref }}" style="float: left;" class="grid__item" >
+        {% include archive-people.html %}
+      <div>
+      <script>
+            document.getElementById("1st-rank").style.display = "grid";
+            document.getElementById('1st-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+</script>
