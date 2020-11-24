@@ -9,6 +9,6 @@
         {% include archive-people.html %}
       <div>
       <script>
-            document.getElementById("1st-rank").style.display = "grid";
-            document.getElementById('1st-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
+            document.getElementById("{{ foo }}st-rank").style.display = "grid";
+            document.getElementById('{{ foo }}st-rank').appendChild(document.getElementById( "{{ post.ref }}" ));
 </script>
