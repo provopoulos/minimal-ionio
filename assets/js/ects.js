@@ -1,14 +1,12 @@
- function TEST1(){
-  var all_courses = document.getElementById('boxes');
+ function LoadVariables(){
+  var all_courses = document.getElementById('boxes'); 
   
-  var checkBox = document.getElementById("myCheck");
-  
-  var mathimata = all_courses.getElementsByTagName('input');
+  var courses_input = all_courses.getElementsByTagName('input');
   
   var text = document.getElementById("text");
-for (var i=0, len=mathimata.length; i<len; i++) {
-  //mporo if gia elenxo an sigoura auto p thelo
-            mathimata[i].addEventListener("change", ects_total)
+for (var i=0, len=courses_input.length; i<len; i++) {
+  //mporei na iparxi if edo gia elenxo
+            courses_input[i].addEventListener("change", ects_total)
     }
 }
 
@@ -17,48 +15,45 @@ for (var i=0, len=mathimata.length; i<len; i++) {
 
 function ects_total(){
   
-  var tes = document.getElementById("toTXT");
+  var changing_text = document.getElementById("ects_span");
   
-  var ects = parseInt(tes.innerHTML);
+  var ects = parseInt(changing_text.innerHTML);
   
-  var diff = document.getElementById("Ta240");
+  var diff = document.getElementById("ects_span_240");
   
   if(this.checked){  
     ects += parseInt(this.getAttribute('ects'));
-    console.log(ects);
-    tes.innerHTML=(ects);
+    changing_text.innerHTML=(ects);
     var difference = 240 - ects;
     diff.innerHTML=(difference);
   }
   else{
     ects -= parseInt(this.getAttribute('ects'));
     console.log(ects);
-    tes.innerHTML=(ects);
+    changing_text.innerHTML=(ects);
     var difference = 240 - ects;
     diff.innerHTML=(difference);
   }
   
 }
 
-function ects_total_TEMP(m){
+function ects_total_TEMP(m){//function gia xrisi tou autoCheck
   
-  var tes = document.getElementById("toTXT");
+  var changing_text = document.getElementById("toTXT");
   
-  var ects = parseInt(tes.innerHTML);
+  var ects = parseInt(changing_text.innerHTML);
   
-  var diff = document.getElementById("Ta240");
+  var diff = document.getElementById("ects_span_240");
   
-  if(m.checked){  
+  if(m.checked){
     ects += parseInt(m.getAttribute('ects'));
-    console.log(ects);
-    tes.innerHTML=(ects);
+    changing_text.innerHTML=(ects);
     var difference = 240 - ects;
     diff.innerHTML=(difference);
   }
   else{
     ects -= parseInt(m.getAttribute('ects'));
-    console.log(ects);
-    tes.innerHTML=(ects);
+    changing_text.innerHTML=(ects);
     var difference = 240 - ects;
     diff.innerHTML=(difference);
   }
@@ -67,10 +62,15 @@ function ects_total_TEMP(m){
 
 
 function autoCheck(){
-  //na kamo check dame k an oulla tou kormou en unchecked na ginete automata .checked=false;
+  //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
   
+  
+  //pio kato einai ena paradeigma gia ena pinaka
+  //o kodikas gia na leitourgisi prepi na gini meso liquid kai me sostous pinakes
+  //pinakes pou prepei na ginoun
+  //ipoxreotika,epilegomena,2 kateuthinsis -> gia ola ta e3amina
+  //idioi pinakes alla gia to kathe e3amino etsi oste na mpori na ftiakti check pano apo to kathe e3amino gia ligotera clicks
   var kormou = document.getElementById("Kormou");
-  //ta pio kato na dokimaso me for
   var A1 = document.getElementById("MathimaA1");
   var A2 = document.getElementById("MathimaA2");
   var B1 = document.getElementById("MathimaB1");
@@ -96,20 +96,20 @@ function autoCheck(){
       
     }
     
-    //Dame na kamo if me analogos ti ginete na paeni sto function etcs_total j n allasi gianamen exoumente lathos teliko
+    //mpori na ftiaxtoun ta 2 if pio kato gia na min exoume bugs sto ects
       
     //if(A1.checked==false){
-  //  A1.checked=true;
- //   ects_total_TEMP(A1);
- // }
-//  else{
-//    A1.checked=false;
-//    ects_total_TEMP(A1);
- // }
+    //A1.checked=true;
+    //ects_total_TEMP(A1);
+    //}
+    //else{
+    //A1.checked=false;
+    //ects_total_TEMP(A1);
+    //}
   }
   
  
 }
 $(window).on('load', function(){
-  TEST1();
+  LoadVariables();
 });
