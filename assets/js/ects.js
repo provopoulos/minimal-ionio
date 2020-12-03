@@ -1,9 +1,9 @@
  function TEST1(){
-  var Olo = document.getElementById('boxes');
+  var all_courses = document.getElementById('boxes');
   
   var checkBox = document.getElementById("myCheck");
   
-  var mathimata = Olo.getElementsByTagName('input');
+  var mathimata = all_courses.getElementsByTagName('input');
   
   var text = document.getElementById("text");
 for (var i=0, len=mathimata.length; i<len; i++) {
