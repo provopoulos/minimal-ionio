@@ -111,4 +111,7 @@ function autoCheck(){
  
 }
 
-TEST1();
+
+$(window).load(function () {
+    TEST1();
+});
