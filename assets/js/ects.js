@@ -110,8 +110,6 @@ function autoCheck(){
   
  
 }
-
-
-$(window).load(function () {
-    TEST1();
+$(window).on('load', function(){
+  TEST1();
 });
