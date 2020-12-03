@@ -23,7 +23,7 @@
       {% if post.link %}
        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
-         <input type="checkbox" id="{{ post.ref }}" name="{{ post.ref }}" value="{{ post.ref }}" ects="{{ post.ects }}"><a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+         <input type="checkbox" id="{{ post.ref }}" name="{{ post.ref }}" value="{{ post.ref }}" ects="{{ post.ects }}">&nbsp;<a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
     {% if post.read_time %}
