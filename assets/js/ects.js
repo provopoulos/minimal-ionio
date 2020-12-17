@@ -62,7 +62,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 function Create_Arrays(semester,type){
   var array;
-  '{% assign posts = site.collections | where: 'label', include.l | first %}'
+  '{% assign posts = site.collections | where: "label", include.l | first %}'
   '{% assign pages = posts.docs | sort: "title" %}'
   '{% for post in pages %}'
     '{% if post.semester == semester or post.rank == semester %}'
