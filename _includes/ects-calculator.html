@@ -15,14 +15,15 @@ for (var i=0, len=courses_input.length; i<len; i++) {
 function Create_Arrays(semester,type){
   var course_checkbox = document.getElementById('boxes'); 
   var course_input = course_checkbox.getElementsByTagName('input');
-  var Arrayrtn = new Array();
+  var arrayrtn = new Array();
   for (var i=0, len=course_input.length; i<len; i++) {
-           if( (course_input[i].getAttribute('type') == type) && ( course_input[i].getAttribute('type') == semester) ){
-              print(course_input[i].getAttribute('name'));
+           if( (course_input[i].getAttribute('c_type') == type) && ( course_input[i].getAttribute('sem') == semester) ){
+              //arrayrtn.push(course_input[i].getAttribute('name'))
+                arrayrtn.push(course_input[i].id)
            }
     }
   //set attribute in each check with semester and type in order to automate array creationg
-  return Arrayrtn;
+  return arrayrtn;
 }
 
 
