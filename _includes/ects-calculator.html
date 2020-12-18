@@ -1,4 +1,4 @@
-{% assign posts = site.collections | where: 'label', include.l | first %}
+{% assign posts = site.collections | where: 'label', 'courses' | first %}
 {% assign pages = posts.docs | sort: "title" %}
  <script>
  function LoadVariables(){
