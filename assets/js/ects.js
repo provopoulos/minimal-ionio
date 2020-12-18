@@ -1,11 +1,11 @@
 //ects.js if liquid not used
 //ects-calculator.html if liquid is used
 
+//global variables
+var all_courses = document.getElementById('boxes'); 
+var courses_input = all_courses.getElementsByTagName('input');
+
 function LoadVariables(){
-  var all_courses = document.getElementById('boxes'); 
-  
-  var courses_input = all_courses.getElementsByTagName('input');
-  
   var text = document.getElementById("text");
 for (var i=0, len=courses_input.length; i<len; i++) {
   //mporei na iparxi if edo gia elenxo
