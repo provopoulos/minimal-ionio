@@ -61,7 +61,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 }
 
 function Create_Arrays(semester,type){
-  var array;
+  var array = new Object();
   '{% assign posts = site.collections | where: "label", include.l | first %}'
   '{% assign pages = posts.docs | sort: "title" %}'
   '{% for post in pages %}'
