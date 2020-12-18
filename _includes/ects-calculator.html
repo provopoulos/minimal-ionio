@@ -1,5 +1,9 @@
+<script>
 {% assign posts = site.collections | where: "label", "courses" | first %}
 {% assign pages = posts.docs | sort: "title" %}
+var theposts = {{ posts }}
+var thepages = {{ pages }}
+</script>
  <script>
  function LoadVariables(){
   var all_courses = document.getElementById('boxes'); 
@@ -65,13 +69,6 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 function Create_Arrays(semester,type){
   var ReferencesArray;
-  {% for post in pages %}
-    {% if post.semester == semester or post.rank == semester %}
-      {% if post.type == type %}
-        ReferencesArray.push('{{ post.ref }}');
-      {% endif %}"
-    {% endif %}
-  {% endfor %}
 
   return ReferencesArray;
   
