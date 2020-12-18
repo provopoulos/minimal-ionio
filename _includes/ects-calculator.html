@@ -65,13 +65,14 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 function Create_Arrays(semester,type){
   var ReferencesArray;
-  //for ({{ post }} in {{ pages }}){
-   //if ({{ post.semester }} == {{ semester }} or {{ post.rank == semester }}){
-    //  if ({{ post.type }} == {{ type }}){
-    //    array.push({{ post.ref }});
-  //    }
- //   }
-//  }
+  {% for post in pages %}
+    {% if post.semester == semester or post.rank == semester %}
+      {% if post.type == type %}
+        ReferencesArray.push('{{ post.ref }}');
+      {% endif %}"
+    {% endif %}
+  {% endfor %}
+
   return ReferencesArray;
   
 }
