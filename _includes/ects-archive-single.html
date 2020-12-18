@@ -12,7 +12,7 @@
 
 
 {% if post.link %}
-  <p><input type="checkbox" id="{{ post.ref }}" name="{{ post.ref }}" value="{{ post.ref }}" ects="{{ post.ects }}" sem="{{ post.semester }}" type="{{ post.type }}"><a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a></p>
+  <p><input type="checkbox" id="{{ post.ref }}" name="{{ post.ref }}" value="{{ post.ref }}" ects="{{ post.ects }}" sem="{{ post.semester }}" c_type="{{ post.type }}"><a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a></p>
 {% else %}
-  <p><input type="checkbox" id="{{ post.ref }}" name="{{ post.ref }}" value="{{ post.ref }}" ects="{{ post.ects }}">&nbsp;<a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a></p>
+  <p><input type="checkbox" id="{{ post.ref }}" name="{{ post.ref }}" value="{{ post.ref }}" ects="{{ post.ects }}" sem="{{ post.semester }}" c_type="{{ post.type }}">&nbsp;<a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a></p>
 {% endif %}
