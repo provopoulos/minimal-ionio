@@ -4,12 +4,11 @@
   var courses_input = all_courses.getElementsByTagName('input');
   
   var text = document.getElementById("text");
-  for (var i=0, len=courses_input.length; i<len; i++) {
-    //mporei na iparxi if edo gia elenxo
-              courses_input[i].addEventListener("change", ects_total)
+for (var i=0, len=courses_input.length; i<len; i++) {
+  //mporei na iparxi if edo gia elenxo
+            courses_input[i].addEventListener("change", ects_total)
     }
 }
-
 
 
 
@@ -61,14 +60,6 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
   
 }
 
-function Create_Arrays(semester,type){
-  var array = new Array();
-    {% assign posts = site.collections | where: "label", include.l | first | json %}
-    {% assign pages = posts.docs | sort: "title" | json %}
-          array.push({{ post.ref | json }});
-  
-}
-
 
 function autoCheck(){
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
@@ -85,9 +76,6 @@ function autoCheck(){
   var B1 = document.getElementById("MathimaB1");
   var B2 = document.getElementById("MathimaB2");
   var MaKormou = [A1,A2,B1,B2];
-  var TestArray = Create_Arrays(1,"M")
-  
-  
   
   for (var i=0, len2=MaKormou.length; i<len2; i++) {
     if(kormou.checked==true){
