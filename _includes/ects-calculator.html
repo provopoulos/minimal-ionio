@@ -1,8 +1,8 @@
 <script>
 {% assign posts2 = site.collections | where: "label", "courses" | first %}
 {% assign pages2 = posts2.docs | sort: "title" %}
-var testing = "{{ posts2 | json}}"
-var testing2 = "{{ pages2 | json}}"
+var testing = "{{ posts2 | json}}";
+var testing2 = "{{ pages2 | json}}";
 </script>
  <script>
  function LoadVariables(){
