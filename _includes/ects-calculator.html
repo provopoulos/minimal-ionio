@@ -62,7 +62,14 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 }
 
 function Create_Arrays(semester,type){
-  //set attribute in each check with semester and type in order to automate array creationg
+  var Arrayrtn = new Array();
+  for (var i=0, len=courses_input.length; i<len; i++) {
+           if((courses_input[i].getAttribute('type') == type) && (courses_input[i].getAttribute('type') == semester)){
+              print(courses_input[i].getAttribute('name');
+           }
+    }
+  //set attribute in each check with semester and type in order to automate array creation
+  return Arrayrtn;
   
 }
 
