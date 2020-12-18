@@ -17,7 +17,7 @@ function Create_Arrays(semester,type){
   var course_input = course_checkbox.getElementsByTagName('input');
   var arrayrtn = new Array();
   for (var i=0, len=course_input.length; i<len; i++) {
-           if( (course_input[i].getAttribute('type') == type) && ( course_input[i].getAttribute('type') == semester) ){
+           if( (course_input[i].getAttribute('c_type') == type) && ( course_input[i].getAttribute('sem') == semester) ){
               //arrayrtn.push(course_input[i].getAttribute('name'))
                 arrayrtn.push(course_input[i].id)
            }
