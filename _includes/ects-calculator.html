@@ -1,10 +1,4 @@
 <script>
-{% assign posts2 = site.collections | where: "label", "courses" | first %}
-{% assign pages2 = posts2.docs | sort: "title" %}
-var testing = "{{ posts2 | jsonify }}";
-var testing2 = "{{ pages2 |jsonify }}";
-</script>
- <script>
  function LoadVariables(){
   var all_courses = document.getElementById('boxes'); 
   
@@ -68,9 +62,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 }
 
 function Create_Arrays(semester,type){
-  var ReferencesArray;
-
-  return ReferencesArray;
+  //set attribute in each check with semester and type in order to automate array creationg
   
 }
 
@@ -90,7 +82,7 @@ function autoCheck(){
   var B1 = document.getElementById("MathimaB1");
   var B2 = document.getElementById("MathimaB2");
   var MaKormou = [A1,A2,B1,B2];
-  var TestArray = Create_Arrays(1,"M")
+ // var TestArray = Create_Arrays(1,"M")
   
   
   
