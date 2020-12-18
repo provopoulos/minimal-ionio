@@ -1,8 +1,8 @@
 <script>
-{% assign posts = site.collections | where: "label", "courses" | first %}
-{% assign pages = posts.docs | sort: "title" %}
-var theposts = {{ posts }}
-var thepages = {{ pages }}
+{% assign posts2 = site.collections | where: "label", "courses" | first %}
+{% assign pages2 = posts2.docs | sort: "title" %}
+var theposts = {{ posts2 }}
+var thepages = {{ pages2 }}
 </script>
  <script>
  function LoadVariables(){
