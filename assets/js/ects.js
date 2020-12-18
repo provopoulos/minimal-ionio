@@ -1,4 +1,7 @@
- function LoadVariables(){
+//ects.js if liquid not used
+//ects-calculator.html if liquid is used
+
+function LoadVariables(){
   var all_courses = document.getElementById('boxes'); 
   
   var courses_input = all_courses.getElementsByTagName('input');
@@ -10,7 +13,10 @@ for (var i=0, len=courses_input.length; i<len; i++) {
     }
 }
 
-
+function Create_Arrays(semester,type){
+  //set attribute in each check with semester and type in order to automate array creationg
+  
+}
 
 
 function ects_total(){
