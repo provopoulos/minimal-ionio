@@ -62,7 +62,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 function Create_Arrays(semester,type){
   var array = new Array();
-  document.write("{% assign posts = site.collections | where: 'label', include.l | first %}{% assign pages = posts.docs | sort: 'title' %}{% for post in pages %}{% if post.semester == semester or post.rank == semester %}{% if post.type == type %}", array.push('{{ post.ref }}');, "{% endif %}{% endif %}{% endfor %}");
+  document.write("{% assign posts = site.collections | where: 'label', include.l | first %}{% assign pages = posts.docs | sort: 'title' %}{% for post in pages %}{% if post.semester == semester or post.rank == semester %}{% if post.type == type %}", console.log("test"), "{% endif %}{% endif %}{% endfor %}");
   return array;
   
 }
