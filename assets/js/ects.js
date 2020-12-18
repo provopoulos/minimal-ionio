@@ -16,8 +16,8 @@ for (var i=0, len=courses_input.length; i<len; i++) {
 function Create_Arrays(semester,type){
   var Arrayrtn = new Array();
   for (var i=0, len=courses_input.length; i<len; i++) {
-           if((courses_input[i].getAttribute('type') == type) && (courses_input[i].getAttribute('type') == semester)){
-              print(courses_input[i].getAttribute('name');
+           if( (courses_input[i].getAttribute('type') == type) && ( courses_input[i].getAttribute('type') == semester) ){
+              print(courses_input[i].getAttribute('name'));
            }
     }
   //set attribute in each check with semester and type in order to automate array creationg
