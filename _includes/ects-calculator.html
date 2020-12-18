@@ -1,4 +1,4 @@
-{% assign posts = site.collections | where: 'label', 'courses' | first %}
+{% assign posts = site.collections | where: "label", "courses" | first %}
 {% assign pages = posts.docs | sort: "title" %}
  <script>
  function LoadVariables(){
@@ -65,13 +65,13 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 function Create_Arrays(semester,type){
   var array;
-  for ({{ post }} in {{ pages }}){
-    if ({{ post.semester }} == {{ semester }} or {{ post.rank == semester }}){
-      if ({{ post.type }} == {{ type }}){
-        array.push({{ post.ref }});
-      }
-    }
-  }
+  //for ({{ post }} in {{ pages }}){
+   //if ({{ post.semester }} == {{ semester }} or {{ post.rank == semester }}){
+    //  if ({{ post.type }} == {{ type }}){
+    //    array.push({{ post.ref }});
+  //    }
+ //   }
+//  }
   return array;
   
 }
