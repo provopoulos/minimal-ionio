@@ -1,6 +1,6 @@
 //ects.js if liquid not used
 //ects-calculator.html if liquid is used
-
+var autocheck = 0;
 function LoadVariables(){
   var all_courses = document.getElementById('boxes'); 
   var courses_input = all_courses.getElementsByTagName('input');
@@ -43,27 +43,27 @@ function Create_Arrays(semester,type){
 
 
 function ects_total(){
-  
-  var changing_text = document.getElementById("ects_span");
-  
-  var ects = parseInt(changing_text.innerHTML);
-  
-  var diff = document.getElementById("ects_span_240");
-  
-  if(this.checked){  
-    ects += parseInt(this.getAttribute('ects'));
-    changing_text.innerHTML=(ects);
-    var difference = 240 - ects;
-    diff.innerHTML=(difference);
+  if(autocheck == 0){
+    var changing_text = document.getElementById("ects_span");
+
+    var ects = parseInt(changing_text.innerHTML);
+
+    var diff = document.getElementById("ects_span_240");
+
+    if(this.checked){  
+      ects += parseInt(this.getAttribute('ects'));
+      changing_text.innerHTML=(ects);
+      var difference = 240 - ects;
+      diff.innerHTML=(difference);
+    }
+    else{
+      ects -= parseInt(this.getAttribute('ects'));
+      console.log(ects);
+      changing_text.innerHTML=(ects);
+      var difference = 240 - ects;
+      diff.innerHTML=(difference);
+    }
   }
-  else{
-    ects -= parseInt(this.getAttribute('ects'));
-    console.log(ects);
-    changing_text.innerHTML=(ects);
-    var difference = 240 - ects;
-    diff.innerHTML=(difference);
-  }
-  
 }
 
 function ects_total_TEMP(m){//function gia xrisi tou autoCheck
@@ -87,12 +87,14 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
     diff.innerHTML=(difference);
   }
   
+  autocheck = 0;
 }
 
 
 
 
 function autoCheck(){
+  autocheck = 1;
   var check_for_all = document.getElementById("mandatory_checkbox");
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
   
