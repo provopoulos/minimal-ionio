@@ -2,7 +2,7 @@
 //ects-calculator.html if liquid is used
 function tesst(){
  for (i = 1; i < 9; i++) {
-   var 'mandatory'+i = Create_Arrays(i,"M");
+   window['mandatory'+i] = Create_Arrays(i,"M");
   } 
 }
 
