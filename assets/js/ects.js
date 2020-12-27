@@ -2,7 +2,7 @@
 //ects-calculator.html if liquid is used
 
 function LoadVariables(){
-  window.autocheck = 0;
+ // window.autocheck = 0;
   var all_courses = document.getElementById('boxes'); 
   var courses_input = all_courses.getElementsByTagName('input');
   var text = document.getElementById("text");
@@ -46,7 +46,7 @@ function Create_Arrays(semester,type){
 
 
 function ects_total(){
-  if(autocheck == 0){
+  //if(autocheck == 0){
     var changing_text = document.getElementById("ects_span");
 
     var ects = parseInt(changing_text.innerHTML);
@@ -66,7 +66,7 @@ function ects_total(){
       var difference = 240 - ects;
       diff.innerHTML=(difference);
     }
-  }
+  //}
 }
 
 function ects_total_TEMP(m){//function gia xrisi tou autoCheck
@@ -97,17 +97,11 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 
 function autoCheck(){
-  window.autocheck = 1;
-  console.log(autocheck);
+  //window.autocheck = 1;
+ // console.log(autocheck);
   var check_for_all = document.getElementById("mandatory_checkbox");
-  //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
+
   
-  
-  //pio kato einai ena paradeigma gia ena pinaka
-  //o kodikas gia na leitourgisi prepi na gini meso liquid kai me sostous pinakes
-  //pinakes pou prepei na ginoun
-  //ipoxreotika,epilegomena,2 kateuthinsis -> gia ola ta e3amina
-  //idioi pinakes alla gia to kathe e3amino etsi oste na mpori na ftiakti check pano apo to kathe e3amino gia ligotera clicks
   
   for (var i=0, len2=mandatory_all.length; i<len2; i++) {
     if(check_for_all.checked==true){
