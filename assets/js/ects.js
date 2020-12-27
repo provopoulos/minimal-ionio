@@ -1,6 +1,10 @@
 //ects.js if liquid not used
 //ects-calculator.html if liquid is used
-
+function tesst(){
+ for (i = 1; i < 9; i++) {
+   var mandatory+i = Create_Arrays(i,"M");
+  } 
+}
 
 function LoadVariables(){
   var all_courses = document.getElementById('boxes'); 
@@ -79,11 +83,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 }
 
 
-function tesst(){
- for (i = 1; i < 9; i++) {
-   var mandatory+i = Create_Arrays(i,"M");
-  } 
-}
+
 
 function autoCheck(){
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
