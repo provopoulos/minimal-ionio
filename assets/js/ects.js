@@ -68,7 +68,7 @@ function ects_total(){
 
 function ects_total_TEMP(m){//function gia xrisi tou autoCheck
   
-  var changing_text = document.getElementById("toTXT");
+  var changing_text = document.getElementById("ects_span");
   
   var ects = parseInt(changing_text.innerHTML);
   
