@@ -93,7 +93,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 
 function autoCheck(){
-  var check_for_all = document.getElementById("mandatory_check");
+  var check_for_all = document.getElementById("mandatory_checkbox");
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
   
   
