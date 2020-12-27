@@ -79,8 +79,8 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 }
 
 
-function test(){
- for (var i=1, i<9, i++){
+function tesst(){
+ for (i = 1; i < 9; i++) {
    var mandatory+i = Create_Arrays(i,"M");
   } 
 }
