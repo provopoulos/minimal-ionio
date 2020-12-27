@@ -8,7 +8,7 @@ function LoadVariables(){
   var text = document.getElementById("text");
 for (var i=0, len=courses_input.length; i<len; i++) {
   //mporei na iparxi if edo gia elenxo
-          if(courses_input[i].hasAttribute('ects'){
+          if(courses_input[i].hasAttribute('ects')){
             courses_input[i].addEventListener("change", ects_total)
         }
     }
