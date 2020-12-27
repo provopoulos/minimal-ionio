@@ -96,28 +96,28 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 
 
-function autoCheck(){
+function autoCheck(m){
   //window.autocheck = 1;
  // console.log(autocheck);
   var check_for_all = document.getElementById("mandatory_checkbox");
 
   
   
-  for (var i=0, len2=mandatory_all.length; i<len2; i++) {
+  for (var i=0, len2=m.length; i<len2; i++) {
     if(check_for_all.checked==true){
-      if(mandatory_all[i].checked==true){
-        mandatory_all[i].checked=true;
+      if(m[i].checked==true){
+        m[i].checked=true;
       }else{
-        mandatory_all[i].checked=true;
-       ects_total_TEMP(mandatory_all[i]);
+        m[i].checked=true;
+       ects_total_TEMP(m[i]);
       }
       
     }else{
-      if(mandatory_all[i].checked==true){
-        mandatory_all[i].checked=false;
-       ects_total_TEMP(mandatory_all[i]);
+      if(m[i].checked==true){
+        m[i].checked=false;
+       ects_total_TEMP(m[i]);
       }else{
-        mandatory_all[i].checked=false;
+        m[i].checked=false;
       }
       
     }
