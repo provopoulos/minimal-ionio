@@ -1,15 +1,5 @@
 //ects.js if liquid not used
 //ects-calculator.html if liquid is used
-function tesst(){
- for (i = 1; i < 9; i++) {
-   window['mandatory'+i] = Create_Arrays(i,"M");
-   window['AE'+i] = Create_Arrays(i,"H");
-   window['PS'+i] = Create_Arrays(i,"I");
-  }
-  var mandatory_all = mandatory1.concat(mandatory2, mandatory3,mandatory4,mandatory5,mandatory6,mandatory7,mandatory8);
-  var AE_all = AE1.concat(AE2, AE3,AE4,AE5,AE6,AE7,AE8);
-  var PS_all = PS1.concat(PS2, PS3,PS4,PS5,PS6,PS7,PS8);
-}
 
 function LoadVariables(){
   var all_courses = document.getElementById('boxes'); 
@@ -19,6 +9,18 @@ for (var i=0, len=courses_input.length; i<len; i++) {
   //mporei na iparxi if edo gia elenxo
             courses_input[i].addEventListener("change", ects_total)
     }
+  LoadArrays();
+}
+
+function LoadArrays(){
+ for (i = 1; i < 9; i++) {
+   window['mandatory'+i] = Create_Arrays(i,"M");
+   window['AE'+i] = Create_Arrays(i,"H");
+   window['PS'+i] = Create_Arrays(i,"I");
+  }
+  var mandatory_all = mandatory1.concat(mandatory2, mandatory3,mandatory4,mandatory5,mandatory6,mandatory7,mandatory8);
+  var AE_all = AE1.concat(AE2, AE3,AE4,AE5,AE6,AE7,AE8);
+  var PS_all = PS1.concat(PS2, PS3,PS4,PS5,PS6,PS7,PS8);
 }
 
 function Create_Arrays(semester,type){
@@ -91,6 +93,7 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 
 function autoCheck(){
+  var check_for_all = document.getElementById("mandatory_check");
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
   
   
@@ -100,21 +103,21 @@ function autoCheck(){
   //ipoxreotika,epilegomena,2 kateuthinsis -> gia ola ta e3amina
   //idioi pinakes alla gia to kathe e3amino etsi oste na mpori na ftiakti check pano apo to kathe e3amino gia ligotera clicks
   
-  for (var i=0, len2=mandatory1.length; i<len2; i++) {
-    if(kormou.checked==true){
-      if(MaKormou[i].checked==true){
-        MaKormou[i].checked=true;
+  for (var i=0, len2=mandatory_all.length; i<len2; i++) {
+    if(check_for_all.checked==true){
+      if(mandatory_all[i].checked==true){
+        mandatory_all[i].checked=true;
       }else{
-        MaKormou[i].checked=true;
-       ects_total_TEMP(MaKormou[i]);
+        mandatory_all[i].checked=true;
+       ects_total_TEMP(mandatory_all[i]);
       }
       
     }else{
-      if(MaKormou[i].checked==true){
-        MaKormou[i].checked=false;
-       ects_total_TEMP(MaKormou[i]);
+      if(mandatory_all[i].checked==true){
+        mandatory_all[i].checked=false;
+       ects_total_TEMP(mandatory_all[i]);
       }else{
-        MaKormou[i].checked=false;
+        mandatory_all[i].checked=false;
       }
       
     }
