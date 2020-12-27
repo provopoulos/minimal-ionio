@@ -3,6 +3,8 @@
 function tesst(){
  for (i = 1; i < 9; i++) {
    window['mandatory'+i] = Create_Arrays(i,"M");
+   window['PS'+i] = Create_Arrays(i,"I");
+   window['AE'+i] = Create_Arrays(i,"H");
   } 
 }
 
