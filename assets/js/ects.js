@@ -79,6 +79,12 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 }
 
 
+function test(){
+ for (var i=1, i<9, i++){
+   var mandatory+i = Create_Arrays(i,"M");
+  } 
+}
+
 function autoCheck(){
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
   
@@ -88,14 +94,8 @@ function autoCheck(){
   //pinakes pou prepei na ginoun
   //ipoxreotika,epilegomena,2 kateuthinsis -> gia ola ta e3amina
   //idioi pinakes alla gia to kathe e3amino etsi oste na mpori na ftiakti check pano apo to kathe e3amino gia ligotera clicks
-  var kormou = document.getElementById("Kormou");
-  var A1 = document.getElementById("MathimaA1");
-  var A2 = document.getElementById("MathimaA2");
-  var B1 = document.getElementById("MathimaB1");
-  var B2 = document.getElementById("MathimaB2");
-  var MaKormou = [A1,A2,B1,B2];
   
-  for (var i=0, len2=MaKormou.length; i<len2; i++) {
+  for (var i=0, len2=mandatory1.length; i<len2; i++) {
     if(kormou.checked==true){
       if(MaKormou[i].checked==true){
         MaKormou[i].checked=true;
