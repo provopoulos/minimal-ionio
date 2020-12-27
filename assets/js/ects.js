@@ -18,9 +18,9 @@ function LoadArrays(){
    window['AE'+i] = Create_Arrays(i,"H");
    window['PS'+i] = Create_Arrays(i,"I");
   }
-  var mandatory_all = mandatory1.concat(mandatory2, mandatory3,mandatory4,mandatory5,mandatory6,mandatory7,mandatory8);
-  var AE_all = AE1.concat(AE2, AE3,AE4,AE5,AE6,AE7,AE8);
-  var PS_all = PS1.concat(PS2, PS3,PS4,PS5,PS6,PS7,PS8);
+  window.mandatory_all = mandatory1.concat(mandatory2, mandatory3,mandatory4,mandatory5,mandatory6,mandatory7,mandatory8);
+  window.AE_all = AE1.concat(AE2, AE3,AE4,AE5,AE6,AE7,AE8);
+  window.PS_all = PS1.concat(PS2, PS3,PS4,PS5,PS6,PS7,PS8);
 }
 
 function Create_Arrays(semester,type){
