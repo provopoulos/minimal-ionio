@@ -1,7 +1,8 @@
 //ects.js if liquid not used
 //ects-calculator.html if liquid is used
-var autocheck = 0;
+
 function LoadVariables(){
+  window.autocheck = 0;
   var all_courses = document.getElementById('boxes'); 
   var courses_input = all_courses.getElementsByTagName('input');
   var text = document.getElementById("text");
@@ -87,14 +88,15 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
     diff.innerHTML=(difference);
   }
   
-  autocheck = 0;
+  window.autocheck = 0;
 }
 
 
 
 
 function autoCheck(){
-  autocheck = 1;
+  window.autocheck = 1;
+  console.log(autocheck);
   var check_for_all = document.getElementById("mandatory_checkbox");
   //constant check an ola kapiou pinaka checked tote na ginete automata checked=false;
   
