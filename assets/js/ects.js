@@ -22,6 +22,10 @@ function Create_Arrays(semester,type){
                 arrayrtn.push(course_input[i].id)
            }
     }
+  for( var i=0, len=arrayrtn.length; i<len; i++){
+    arrayrtn[i] = document.getElementById(arrayrtn[i]);
+
+  }
   //set attribute in each check with semester and type in order to automate array creationg
   return arrayrtn;
 }
