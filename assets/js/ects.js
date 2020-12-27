@@ -96,10 +96,10 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 
 
-function autoCheck(m){
+function autoCheck(m,z){
   //window.autocheck = 1;
  // console.log(autocheck);
-  var check_for_all = document.getElementById("mandatory_checkbox");
+  var check_for_all = document.getElementById(z);
 
   
   
