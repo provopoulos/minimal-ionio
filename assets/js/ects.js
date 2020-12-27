@@ -3,9 +3,12 @@
 function tesst(){
  for (i = 1; i < 9; i++) {
    window['mandatory'+i] = Create_Arrays(i,"M");
-   window['PS'+i] = Create_Arrays(i,"I");
    window['AE'+i] = Create_Arrays(i,"H");
-  } 
+   window['PS'+i] = Create_Arrays(i,"I");
+  }
+  var mandatory_all = mandatory1.concat(mandatory2, mandatory3,mandatory4,mandatory5,mandatory6,mandatory7,mandatory8);
+  var AE_all = AE1.concat(AE2, AE3,AE4,AE5,AE6,AE7,AE8);
+  var PS_all = PS1.concat(PS2, PS3,PS4,PS5,PS6,PS7,PS8);
 }
 
 function LoadVariables(){
