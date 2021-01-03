@@ -64,7 +64,7 @@ function ects_total(){
   
 }
 
-function ects_total_TEMP(m){//function gia xrisi tou autoCheck
+function ects_total_multiple(m){//function gia xrisi tou autoCheck
   
   var changing_text = document.getElementById("ects_span");
   
@@ -91,24 +91,23 @@ function ects_total_TEMP(m){//function gia xrisi tou autoCheck
 
 
 
-function autoCheck(m,test){
+function autoCheck(m,element_box){
   var check_for_all = document.getElementById('mandatory_checkbox');
 
-  
-  
+
   for (var i=0, len2=m.length; i<len2; i++) {
-    if(test.checked==true){
+    if(element_box.checked==true){
       if(m[i].checked==true){
         m[i].checked=true;
       }else{
         m[i].checked=true;
-       ects_total_TEMP(m[i]);
+       ects_total_multiple(m[i]);
       }
       
     }else{
       if(m[i].checked==true){
         m[i].checked=false;
-       ects_total_TEMP(m[i]);
+       ects_total_multiple(m[i]);
       }else{
         m[i].checked=false;
       }
