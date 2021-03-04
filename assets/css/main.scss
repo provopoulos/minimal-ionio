@@ -79,3 +79,12 @@ td,
 th {
   vertical-align: middle;
 }
+.rank_title {
+  grid-column: 1 / span 4;
+}
+.grid-container {
+  display: none;
+  float: inherit;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 50px;
+}
